@@ -1,0 +1,356 @@
+<section class="cs-sec">
+  <div class="container">
+
+    <div class="countdown_wrap">
+
+      {% if module.show_flipping_card %}
+
+      <div class="flip-countdown example">
+        <div class="icon">
+          {% if module.icon_image.src %}
+          {% set sizeAttrs = 'width="{{ module.icon_image.width|escape_attr }}" height="{{ module.icon_image.height|escape_attr }}"' %}
+          {% if module.icon_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.icon_image.width|escape_attr }}" height="{{ module.icon_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.icon_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.icon_image.max_width|escape_attr }}" height="{{ module.icon_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.icon_image.loading != 'disabled' ? 'loading="{{ module.icon_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.icon_image.src|escape_url }}" alt="{{ module.icon_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        <h3>
+          {{ module.flipdown_title }}
+        </h3>
+        <div class="clock"></div>
+
+        {% set flippingmy_date = module.datetime_field %}
+        {% set flippingyear = flippingmy_date.year %}
+        {% set flippingmonth = flippingmy_date.month %}
+        {% set flippingday = flippingmy_date.day %}
+        {% set flippinghour = flippingmy_date.hour %}
+        {% set flippingminute = flippingmy_date.minute %}
+        {% set flippingsecond = flippingmy_date.second %}
+
+        <span class="flipping_card_days">
+          <div class="fl_year">
+            {{ flippingmy_date.year }}
+          </div>
+          <div class="fl_month">
+            {{ flippingmy_date.month }}
+          </div>
+          <div class="fl_date">
+            {{ flippingmy_date.day }}
+          </div>
+
+          <div class="fl_hour">
+            {{ flippingmy_date.hour }}
+          </div>
+
+          <div class="fl_minute">
+            {{ flippingmy_date.minute }}
+          </div>
+        </span>
+
+
+
+
+      </div>
+
+      {% else %}
+
+
+      <div class="countdown_layer example">
+
+
+        <div class="icon">
+          {% if module.icon_image.src %}
+          {% set sizeAttrs = 'width="{{ module.icon_image.width|escape_attr }}" height="{{ module.icon_image.height|escape_attr }}"' %}
+          {% if module.icon_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.icon_image.width|escape_attr }}" height="{{ module.icon_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.icon_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.icon_image.max_width|escape_attr }}" height="{{ module.icon_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.icon_image.loading != 'disabled' ? 'loading="{{ module.icon_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.icon_image.src|escape_url }}" alt="{{ module.icon_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        <h3>
+          {{ module.flipdown_title }}
+        </h3>
+
+        <div class="totalbar">
+          <div class="fill"></div>
+        </div>
+
+        <div class="countdownblock_wrap">
+          <div class="countdownblock days">
+            <svg class="pie days" viewPort="0 0 100 100">
+              <circle class="bg" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+              <circle class="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+            <span class="number"></span>
+            <p><span class="unit">days</span></p>
+          </div>    
+          <div class="countdownblock hours">
+            <svg class="pie hours" viewPort="0 0 100 100">
+              <circle class="bg" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+              <circle class="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+            <span class="number"></span>
+            <p> <span class="unit">hours</span></p>
+          </div>    
+          <div class="countdownblock minutes">
+            <svg class="pie minutes" viewPort="0 0 100 100">
+              <circle class="bg" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+              <circle class="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+            <span class="number"></span>
+            <p> <span class="unit">minutes</span></p>
+          </div>    
+          <div class="countdownblock seconds">
+            <svg class="pie seconds" viewPort="0 0 100 100">
+              <circle class="bg" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+              <circle class="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+            <span class="number"></span>
+            <p> <span class="unit">seconds</span></p>
+          </div>
+        </div>
+
+
+
+
+
+        {# {% set my_date = module.circling_date_time %}
+        {% set year = my_date.year %}
+        {% set month = my_date.month %}
+        {% set day = my_date.day %}
+         {% set hour = my_date.hour %}
+        {% set minute = my_date.minute %}
+        {% set second = my_date.second %} #}
+
+
+        {% set flippingmy_date = module.datetime_field %}
+        {% set flippingyear = flippingmy_date.year %}
+        {% set flippingmonth = flippingmy_date.month %}
+        {% set flippingday = flippingmy_date.day %}
+        {% set flippinghour = flippingmy_date.hour %}
+        {% set flippingminute = flippingmy_date.minute %}
+        {% set flippingsecond = flippingmy_date.second %}
+        <div class="my_date">
+          <div class="cd_year_inner">
+            {{ flippingmy_date.year }}
+          </div>
+          <div class="cd_month_inner">
+            {{ flippingmy_date.month }}
+          </div>
+          <div class="cd_date_inner">
+            {{ flippingmy_date.day }}
+          </div>
+          <div class="cd_hour_inner">
+            {{ flippingmy_date.hour }}
+          </div>
+          <div class="cd_minute_inner">
+            {{ flippingmy_date.minute }}
+          </div>
+        </div>
+
+
+
+      </div>
+
+      {% endif %}
+    </div>
+
+
+  </div>
+
+
+
+</section>
+
+<script src="https://momentjs.com/downloads/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min.js"></script>
+
+<script>
+
+
+
+  window.addEventListener('load', (event) => {
+    let clock;
+
+
+    let currentDate = new Date();
+
+
+    // Target future date/24 hour time/Timezone
+    var targetDate = moment("{{ flippingmy_date.year }}-{{ flippingmy_date.month }}-{{ flippingmy_date.day }} {{ flippingmy_date.hour }}:{{ flippingmy_date.minute }}" ).utc();
+;
+  console.log('targetDate',targetDate);
+
+    // Calculate the difference in seconds between the future and current date
+    let diff = targetDate / 1000 - currentDate.getTime() / 1000;
+
+    if (diff <= 0) {
+      // If remaining countdown is 0
+      clock = (".clock").FlipClock(0, {
+        clockFace: "DailyCounter",
+        countdown: true,
+        autostart: false
+      });
+      console.log("Date has already passed!")
+
+    } else {
+      // Run countdown timer
+      clock = $(".clock").FlipClock(diff, {
+        clockFace: "DailyCounter",
+        countdown: true,
+        callbacks: {
+          stop: function() {
+            console.log("Timer has ended!")
+          }
+        }
+      });
+
+      // Check when timer reaches 0, then stop at 0
+      setTimeout(function() {
+        checktime();
+      }, 1000);
+
+      function checktime() {
+        t = clock.getTime();
+        if (t <= 0) {
+          clock.setTime(0);
+        }
+        setTimeout(function() {
+          checktime();
+        }, 1000);
+      }
+    }
+  });
+
+
+
+
+  // CountLine JS
+
+(function() {
+    'use strict';
+    if (!$) var $ = a => {
+        let r = document.querySelectorAll(a);
+        return r.length > 1 ? r : r[0]
+    };
+
+    var cdYearElement = $('.cd_year_inner');
+    var cdMonthElement = $('.cd_month_inner');
+    var cdDayElement = $('.cd_date_inner');
+    var cdHourElement = $('.cd_hour_inner');
+    var cdMinuteElement = $('.cd_minute_inner');
+
+    var CDYear = parseInt(cdYearElement.textContent);
+    var CDMonth = parseInt(cdMonthElement.textContent) - 1; // Moment.js months are 0-based
+    var CdDays = parseInt(cdDayElement.textContent);
+    var CdHour = parseInt(cdHourElement.textContent);
+    var CdMinute = parseInt(cdMinuteElement.textContent);
+
+    var targetDate = moment([CDYear, CDMonth, CdDays, CdHour, CdMinute]).utc(); // Target date in UTC
+    var originDate = moment([CDYear, CDMonth, CdDays]).utc(); // Origin date in UTC
+    var totalDiff = targetDate.diff(originDate); // Total difference in milliseconds
+
+    console.log('targetDate ->', targetDate);
+
+    var progressBarUpdate = (bar, val, of) => {
+        let pct = (1 - val / of) * (Math.PI * 180);
+        $(bar + ' .bar').style.strokeDashoffset = pct;
+        $(bar + ' .number').innerText = Math.trunc(val);
+    };
+
+    var update = () => {
+        let now = moment(),
+            diff = targetDate.diff(now),
+            days = diff / (24 * 60 * 60 * 1000),
+            hours = (diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000),
+            minutes = (diff % (60 * 60 * 1000)) / (60 * 1000),
+            seconds = (diff % (60 * 1000)) / 1000;
+
+        progressBarUpdate('.days', days, totalDiff / (24 * 60 * 60 * 1000));
+        progressBarUpdate('.hours', hours, 24);
+        progressBarUpdate('.minutes', minutes, 60);
+        progressBarUpdate('.seconds', seconds, 60);
+    };
+
+    var ready = () => {
+        update();
+        setInterval(update, 1000);
+    };
+
+    if (document.readyState != 'loading')
+        ready();
+    else
+        document.addEventListener('DOMContentLoaded', ready);
+})();
+
+
+
+
+
+</script>
+
+
+Bottom JS
+
+window.onload = function () {
+
+  $('.number').each(function(){
+    let number = parseInt($(this).text());
+    if (number < 10) {
+      $(this).addClass('zero');
+    }
+  });
+  
+   var dateText = $('.circling-date').text();
+  var dateWithoutZeros = dateText.replace(' 00:00:00', ''); 
+  $('.circling-date').text(dateWithoutZeros);
+
+
+  // CounLineeeeeeee
+
+  var data =$('.circling-date').text();
+  var arr = data.split('-');
+
+  $(".circling-date").html("<span>"+arr[0] + "</span>" + "<span>"+arr[1] + "</span>" + "<span>"+arr[2] + "</span>");
+
+  $('.circling-date span').eq(0).addClass('cd_year');
+  $('.circling-date span').eq(1).addClass('cd_month');
+  $('.circling-date span').eq(2).addClass('cd_date');
+  
+    
+    var CDYearText = parseInt($('.circling-date span.cd_year').text());
+    var CDMonthText = parseInt($('.circling-date span.cd_month').text());
+    var CdDaysText = parseInt($('.circling-date span.cd_date').text());
+
+//     console.log(CDYearText, CDMonthText, CdDaysText)
+  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

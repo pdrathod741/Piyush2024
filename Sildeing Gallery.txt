@@ -1,0 +1,86 @@
+HTML
+
+<section class="sliding-sec">
+  <div class="container">
+    <h2>
+      {{ module.title }}
+    </h2>
+    <div class="sliding-wrap">
+      {% for item in module.slide_group %}
+      <div class="sliding-toggle" style="background-image:url({{ item.slide_image.src|escape_url }})">
+        <div class="sliding-content">
+          <label class="number">{{ loop.index }}</label>
+          <div class="content"> 
+            <h4>
+              {{ item.slide_title }}
+            </h4>
+            <p>
+              {{ item.sliding_content }}
+            </p>
+          </div>
+
+        </div>  
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+CSS
+
+
+
+section.sliding-sec { background-color: #ECF1F7; padding: 60px 0; display: inline-block; width: 100%; }
+section.sliding-sec h2 { text-align: center; }
+section.sliding-sec .sliding-wrap { display: flex; justify-content: center; gap: 16px; }
+section.sliding-sec .sliding-wrap .sliding-toggle { cursor: pointer; border-radius: 25px; overflow: hidden; }
+section.sliding-sec .sliding-wrap .sliding-toggle:first-child { width: 600px; }
+section.sliding-sec .sliding-wrap .sliding-toggle {  display: flex; align-items: end;  position: relative; height:300px; width:50px; max-width:100%; }
+section.sliding-sec .sliding-wrap .sliding-toggle:before { content: ''; background: linear-gradient(360deg, rgba(22, 21, 27, 0.9) 9.35%, rgba(22, 21, 27, 0) 45.6%); position: absolute; width: 100%; height: 100%; }
+section.sliding-sec .sliding-wrap .sliding-toggle .sliding-content { color: #fff;  display: flex;  align-items: end;  gap: 16px;  position: relative; padding: 7px;}
+section.sliding-sec .sliding-wrap .sliding-toggle .sliding-content label.number { display: grid; border: 2px solid #FFFFFF; min-width: 35px; border-radius: 666px; height: 35px; place-content: center; font-size: 18px; font-weight: 700; line-height: 24.52px; text-align: center; }
+section.sliding-sec .sliding-wrap .sliding-toggle .sliding-content .content { display: inline-block; width: auto; }
+section.sliding-sec .sliding-wrap .sliding-toggle .sliding-content .content h4 { font-size: 18px; font-weight: 700; line-height: 24.52px; text-align: left; color: #fff; margin: 0; }
+section.sliding-sec .sliding-wrap .sliding-toggle .sliding-content .content p { margin: 0; text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size: 16px; font-weight: 400; line-height: 24px; text-align: left; color: #ffff; }
+section.sliding-sec .sliding-wrap .sliding-toggle { background-repeat: no-repeat; background-size: cover; background-position: center; }
+
+
+
+@media only screen and (max-width: 840px) {
+  section.sliding-sec .sliding-wrap .sliding-toggle { width: 100% !important;        height: 55px; }
+section.sliding-sec .sliding-wrap { display: flex; flex-direction: column; }
+  section.sliding-sec .sliding-wrap .sliding-toggle .sliding-content {
+    align-items: center; }
+}
+ 
+
+
+JS
+
+$(document).ready(function(){
+
+
+  if (window.matchMedia("(max-width: 840px)").matches) {
+    $('.sliding-toggle').click(function() {    
+      var toggle = $(this);
+      var toggleWidth = toggle.height() == 300 ? "55px" : "300px";
+
+      $('.sliding-toggle').not(toggle).animate({ height: "55px" });
+
+      toggle.animate({ height: toggleWidth });
+      
+      console.log(toggle);
+      
+    });
+  } else {
+    $('.sliding-toggle').click(function() {    
+      var toggle = $(this);
+      var toggleWidth = toggle.width() == 600 ? "50px" : "600px";
+
+      $('.sliding-toggle').not(toggle).animate({ width: "50px" });
+
+      toggle.animate({ width: toggleWidth });
+    });
+  }
+});

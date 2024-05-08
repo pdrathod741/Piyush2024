@@ -1,0 +1,34 @@
+$(document).ready(function() {
+
+  var accordionParentClass = '.feachFaq';
+  var accordionQuestionClass = '.feachFaq .heading';
+  var accordionContentClass = '.accordion-content';
+
+
+  $(accordionParentClass).each(function(index) {
+    var $accordionContent = $(this).find(accordionContentClass);
+    if (index !== 0) {
+      $accordionContent.hide();
+      $(this).addClass('close');
+    } else {
+      $(this).addClass('open');
+    }
+  });
+
+
+  $(accordionQuestionClass).click(function() {
+    var $parent = $(this).closest(accordionParentClass);
+    var isOpen = $parent.hasClass('open');
+
+
+    $(accordionParentClass).removeClass('open').addClass('close');
+    $(accordionContentClass).slideUp(500);
+
+    if (!isOpen) {
+
+      $parent.removeClass('close').addClass('open');
+      $parent.find(accordionContentClass).slideDown(500);
+    }
+  });
+
+});

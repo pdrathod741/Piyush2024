@@ -1,0 +1,6 @@
+
+{# bannergallery Section #}
+{% dnd_section  padding={ 'top':0, 'bottom':0,'left':0, 'right':0 }, vertical_alignment='MIDDLE', full_width=true %}
+{% dnd_module path='/khadyo/modules/bannergallery', label="Bannergallery" %}
+{% end_dnd_module %}
+{% end_dnd_section %}

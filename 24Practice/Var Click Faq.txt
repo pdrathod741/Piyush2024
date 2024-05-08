@@ -1,0 +1,28 @@
+var action = "click";
+var speed = 500;
+
+$(document).ready(function () {
+  // Question handler
+  $(".faq-btn").on(action, function () {
+    // Toggle the "active" class on the clicked menu item
+    $(this).toggleClass("active");
+
+    // Get next element
+    var $content = $(this).next();
+
+    // Check if the clicked toggle is already open
+    if ($content.is(":visible")) {
+      // If it's open, close it
+      $content.slideUp(speed);
+    } else {
+      // If it's closed, close all other open toggles and then open this one
+      $(".faq-btn")
+        .not(this)
+        .removeClass("active") // Remove "active" class from other menu items
+        .next()
+        .slideUp(speed);
+      $content.slideDown(speed);
+    }
+  });
+});
+

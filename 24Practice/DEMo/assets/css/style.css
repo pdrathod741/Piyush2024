@@ -1,0 +1,489 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.main-logo a {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  z-index: 9;
+  top: 25px;
+  left: 25px;
+}
+
+.box {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #F4CF6C;
+  background-color: rgba(240,100,70);
+  width: 100vw; 
+  z-index: 99;
+} 
+
+/* nav */
+
+.svg__logo svg {
+  width: 20px;
+}
+
+nav {
+  position: fixed;
+  /* height: 10rem; */
+  /* background-color: linen; */
+  z-index: 10;
+}
+
+nav ul {
+  position: absolute;
+  width: 0;
+  top: 100%;
+  left: 0;
+  z-index: -1;
+
+  /* background-color: bisque; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* // for animation */
+  opacity: 0;
+  height: 0;
+}
+
+nav ul li.about {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  top: 0;
+  left: 0;
+  padding: 40px 40px 20px;
+  background: gainsboro;
+  text-align: end;
+  display: grid;
+  align-items: end;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  z-index: 6;
+}
+
+nav ul li.project {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  padding: 40px 40px 20px;
+  background: gainsboro;
+  text-align: end;
+  display: grid;
+  align-items: end;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  z-index: 5;
+}
+
+
+nav ul li.Journal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+  padding: 40px 40px 20px;
+  background: gainsboro;
+  text-align: end;
+  display: grid;
+  align-items: end;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  z-index: 4;
+}
+
+nav ul li.contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 40px 20px;
+  background: gainsboro;
+  text-align: end;
+  display: grid;
+  align-items: end;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  z-index: 3;
+}
+
+
+nav ul li:hover {
+  background-color: #F4CF6C;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: chocolate;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 3rem;
+  /* visibility:hidden; */
+}
+
+nav ul li a:hover {
+  color: chocolate;
+}
+
+.menu-button {
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
+  color: chocolate;
+  transform: rotate(90deg);
+}
+
+header {
+  position: fixed;
+  z-index: 9;
+  background: aliceblue;
+  padding: 40px;
+  width: 5%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.factsContainer {
+  text-align: center;
+}
+
+.factsContainer h2 {
+  font-size: 1.8em;
+  transform: scale(0);
+  padding: 2em 0em;
+  margin-bottom: 15vh;
+  color: #F0C368;
+}
+
+.factsContainer_sm {
+  display: flex;
+  width: 300vw;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* flex: 1; */
+  justify-content: space-between;
+  align-items: center;
+  color: #F0C368;
+}
+
+.fact img {
+  width: 100vw;
+  height: 100vh;
+}
+
+.socialContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sec-first {
+  display: flex;
+  flex-flow: row-reverse;
+  padding: 20px;
+  gap: 40px;
+}
+
+.second {
+  width: 100vw;
+}
+
+.sec-first img {
+  width: 50vw;
+}
+
+/* about */
+
+.about_us,
+.leader {
+  display: flex;
+  height: 100vh;
+  width: 120vw;
+}
+
+.about__inner,
+.fact.about_us {
+  width: 100vw;
+  display: flex;
+}
+
+.about__inner figure,
+.about_us_left,
+.about_us figure {
+  width: 50vw;
+  height: 100vh;
+}
+
+.about__inner figure img,
+.about_us figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about__inner .text {
+  padding: 50px 60px;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  width: 50vw;
+}
+
+.about__inner .text h1 {
+  font-size: 57px;
+  max-width: 500px;
+}
+
+.about_us_left {
+  text-align: left;
+  display: flex;
+  width: 50vw;
+  padding: 50px 60px;
+  border-left: 1px solid rgb(216, 216, 216);
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.about_us_left h2 {
+  font-size: 185px;
+}
+
+.about_us figure {
+  width: 100vw;
+}
+
+/* process_left */
+
+.process_left {
+  padding: 50px 60px;
+  background-color: gray;
+  color: #fff;
+  width: 50vw;
+}
+
+
+.process figure {
+  width: 50vw;
+}
+
+.process figure img {
+  width: 50vw;
+  height: 100vh;
+}
+
+/* leader */
+
+.leader_left {
+  padding: 50px 60px;
+  display: grid;
+  place-items: center;
+  width: 30vw;
+}
+
+.leader_right {
+  display: flex;
+}
+
+
+
+.leaders {
+  padding: 50px 60px;
+  gap: 20px;
+  width: 100vw;
+}
+
+.leaders figure {
+  width: calc(100% / 3);
+  height: 100%;
+}
+
+.leaders figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.fact .intro {
+  width: 40vw;
+}
+
+.fact .intro figure {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.fact .intro figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.introduction {
+  width: 50vw;
+  padding: 50px 60px;
+  border-right: 1px solid rgb(216, 216, 216);
+}
+
+.intro__botm {
+  margin-right: auto;
+}
+
+.gallery {
+  padding: 50px 60px;
+  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.gallery figure {
+  width: calc(100vw / 3)
+}
+
+.gallery figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*  */
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tab-control {
+  width: 50vw;
+  height: 100vh;
+  padding: 60px;
+}
+
+.tab-control h1 {
+  font-size: 24px;
+}
+
+.tab {
+  opacity: 0.5;
+}
+
+.tab:first-child {
+  opacity: 1;
+}
+
+.tab-content {
+  width: 50vw;
+  height: 100vh;
+  position: relative;
+}
+
+.tab-content .content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tab-content .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+.tab-content .content:first-child {
+  opacity: 1;
+}
+
+/* Projects  */
+
+
+/* Journal */
+
+.top__title {
+  padding: 100px 0 60px;
+  text-align: center;
+}
+
+.top__title h1 {
+  font-size: 200px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 30px;
+  border-bottom: 1px solid #000;
+}
+
+.pagination button {
+  background: unset;
+  border: unset;
+  color: #000;
+  font-size: 22px;
+  font-family: var(--aladin);
+  cursor: pointer;
+}
+
+.on-page-content-container {
+  width: 95vw;
+  padding: 60px;
+}
+
+.content__main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.imgs {
+  height: 400px;
+}
+
+.imgs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Projects */

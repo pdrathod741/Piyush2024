@@ -1,0 +1,157 @@
+
+// Show the first tab and hide the rest
+
+$('section.mt-sec .mt-wrap .top-wrap .tab-flex ul.feme-tab li:first-child').addClass('active');
+$(document).ready(function () {
+
+    //Gender
+    $('section.mt-sec .mt-wrap .top-wrap .tab-flex ul.feme-tab.gnr li').click(function () {
+        $('section.mt-sec .mt-wrap .top-wrap .tab-flex ul.feme-tab.gnr li').removeClass('active');
+
+        $(this).addClass('active');
+        return false;
+    });
+
+    //Offers
+
+    $('section.mt-sec .mt-wrap .top-wrap .tab-flex ul.feme-tab.ofr li').click(function () {
+        $('section.mt-sec .mt-wrap .top-wrap .tab-flex ul.feme-tab.ofr li').removeClass('active');
+
+        $(this).addClass('active');
+        return false;
+    });
+});
+
+$('.data-fliter li:first-child').addClass('active');
+$('.data-content').hide();
+$('.data-content:first').show();
+
+// Click function
+$('.data-fliter li').click(function () {
+    $('.data-fliter li').removeClass('active');
+    $(this).addClass('active');
+
+    $('.data-content').hide();
+
+    var activeTab = $(this).find('a').attr('href');
+    $(activeTab).fadeIn();
+    return false;
+});
+
+
+$(document).ready(function () {
+
+    var Visage = $('.visage');
+    var Corps = $('.corps');
+    var Bras = $('.bras');
+    var Jambes = $('.jambes');
+    var Packs = $('.packs');
+    var Homme = $('#homme');
+    var Offer2 = $('#offer2');
+
+    $('section.mt-sec .mt-wrap .top-wrap .tab-flex ul.feme-tab.ofr li #offer1').on('click', function (event) {
+        event.preventDefault();
+
+        $('.data-content').hide();
+
+        $(Visage).show();
+
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li').removeClass('active');
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li').eq(0).addClass('active');
+
+    });
+
+    function chnageActiveonoffer2AndHome() {
+        $('.data-content').hide();
+        $(Corps).show();
+
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li').removeClass('active');
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li a#corps').parent().addClass('active');
+    }
+
+    function chnageActiveonoffer3AndHome() {
+        $('.data-content').hide();
+        $(Visage).show();
+
+
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li').removeClass('active');
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li a#visage').parent().addClass('active');
+    }
+
+
+    $('.feme-tab.ofr li a#offer2').on('click', function (event) {
+
+        event.preventDefault();
+        $(this).parent().toggleClass('active'); // Toggle active class for the parent
+
+        var ishommeAndoffer2Active = $('#homme').parent().hasClass('active') && $('#offer2').parent().hasClass('active');
+        var ishommeAndoffer3Active = $('#homme').parent().hasClass('active') && $('#offer3').parent().hasClass('active');
+
+        if (ishommeAndoffer2Active) {
+            chnageActiveonoffer2AndHome();
+        } else if (ishommeAndoffer3Active) {
+            chnageActiveonoffer3AndHome();
+        }
+        else {
+            $('.data-content').hide();
+            $(Packs).show();
+        }
+
+
+        $('.feme-tab.gnr li').removeClass('active');
+        $('.feme-tab.gnr li a#femme').parent().addClass('active');
+
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li').removeClass('active');
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li a#packs').parent().addClass('active');
+    });
+
+    $('.feme-tab.ofr li a#offer3').on('click', function (event) {
+
+        event.preventDefault();
+
+        $('.data-content').hide();
+
+        $(Bras).show();
+
+        $('.feme-tab.gnr li').removeClass('active');
+        $('.feme-tab.gnr li a#femme').parent().addClass('active');
+
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li').removeClass('active');
+        $('section.mt-sec .mt-wrap .tabel-wrap ul.data-fliter li a#bras').parent().addClass('active');
+    });
+
+
+
+
+
+    // Check if the condition is met
+
+
+    $('#homme').on('click', function (event) {
+        event.preventDefault();
+        $(this).parent().toggleClass('active'); // Toggle active class for the parent
+
+        var ishommeAndoffer2Active = $('#homme').parent().hasClass('active') && $('#offer2').parent().hasClass('active');
+        var ishommeAndoffer3Active = $('#homme').parent().hasClass('active') && $('#offer3').parent().hasClass('active');
+
+        if ( ) {
+            chnageActiveonoffer2AndHome();
+        } else if (ishommeAndoffer3Active) {
+            chnageActiveonoffer3AndHome();
+        }
+        else {
+            $('.data-content').not(Visage).hide();
+        }
+
+        var $section = $(this).closest('section.mt-sec');
+        $section.find('.data-wrap .femme').hide();
+        $section.find('.data-wrap .homme').show();
+    });
+
+    $('#femme').on('click', function (event) {
+        var $section = $(this).closest('section.mt-sec');
+        $section.find('.data-wrap .homme').hide();
+        $section.find('.data-wrap .femme').show();
+    });
+
+});

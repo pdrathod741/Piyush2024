@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner</title>
+</head>
+
+<style>
+    #slider-container { position: relative; width: 100%; overflow: hidden; height: 100vh; } 
+/* #slider-bg { width: 100%; }
+#slider_image_svg_layer { position: absolute;  } */
+
+/* .Slider { color: white; width: 100%; height: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: multiply; padding: 350px 0 60px; position: relative; }
+.Slider.small {padding: 420px 0 20px;}
+.Slider .Slider-content { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+.Slider .Slider-content .Slider-content-inner { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+.Slider .Slider-content .Slider-content-inner h1 { width: 100%; display: inline-block; vertical-align: middle; text-align: center; color: #fff; margin-bottom: 15px; }
+.Slider .Slider-content .Slider-content-inner h1 span { font-weight: normal; }
+.Slider .Slider-content .Slider-content-inner p { width: 100%; display: inline-block; vertical-align: middle; font-size: 24px; font-weight: bold; text-align: center; text-transform: capitalize; color: #a3dbe3; margin-bottom: 0; }
+.Slider .Slider-content .Slider-content-inner .down-arrow { width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 150px; }
+.Slider .Slider-content .Slider-content-inner .down-arrow a { width: 100%; display: flex; justify-content: center; align-items: center; }
+.Slider .Slider-content .Slider-content-inner .down-arrow a img { width: 40px; height: 40px !important; object-fit: contain; object-position: center; display: inline-block; vertical-align: middle; }
+.Slider .Slider-slide { z-index: -1; position: absolute; width: 100%; top: 0; left: 0; height: 100%; transition: opacity 1s ease-in-out; background-position: center center; background-repeat: no-repeat; background-size: cover; background-blend-mode: multiply; background-color: #f6213a; opacity: 0; }
+.Slider .Slider-slide.show { background-blend-mode: multiply; background-color: #f6213a; opacity: 1; } */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#slider_image_svg_layer {
+    background: linear-gradient(90deg,#143c90,#62b9cb 94.55%),#111c55;
+}
+image.image00 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+</style>
+
+<body>
+  <div id="slider-container" >
+    <div id="slider-bg">
+			<svg version="1.1" id="slider_image_svg_layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1600 800" style="enable-background:new 0 0 1600 800;" xml:space="preserve">
+					<mask id="imageMsk00">
+						<g id="verticalShapes00">
+							<rect y="1078.2" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 1098.199951171875" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="1039.7" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 1059.699951171875" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="1001.2" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 1021.2000122070312" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="962.7" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 982.7000122070312" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="924.2" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 944.2000122070312" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="885.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 905.5999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="847.2" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 867.2000122070312" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="808.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 828.5999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="770.2" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 790.2000122070312" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="731.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 751.5999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="693.1" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 713.0999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="654.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 674.5999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="616.1" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 636.0999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="577.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 597.5999755859375" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="539" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 559" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="500.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 520.6000061035156" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="462" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 482" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="423.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 443.6000061035156" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="385.1" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 405.1000061035156" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="346.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 366.6000061035156" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="308.1" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 328.1000061035156" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="269.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 289.6000061035156" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="231" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 251" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="192.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 212.60000610351562" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="154" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 174" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="115.6" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 135.5999984741211" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="77" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 97" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect y="38.5" style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 58.5" transform="matrix(1,0,0,1,0,0)"></rect>
+							<rect style="fill: rgb(255, 255, 255); transform-origin: 0px 0px;" width="1600" height="40" data-svg-origin="800 20" transform="matrix(1,0,0,1,0,0)"></rect>
+						</g>
+					</mask>
+				<g id="imageContainer00" mask="url(#imageMsk00)">
+					<image class="image00" style="overflow:visible; " xlink:href="https://pensionmark.com/hubfs/homepage%20banner.jpeg">
+					</image>
+				</g>
+
+
+                
+			
+						
+            
+            <rect width="1600" height="800" style=" mix-blend-mode: lighten"></rect>
+        </svg>
+
+    </div>
+</div>
+
+    <script src="./gsap.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

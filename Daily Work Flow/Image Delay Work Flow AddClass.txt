@@ -1,0 +1,17 @@
+$(window).scroll(function(){
+  var Position = $(this).scrollTop();
+  var Section = $('section.tzz-sec');
+
+  if (Position >= Section.offset().top - 50) {
+    // Select all .right img elements within Section
+    var images = Section.find('.right img');
+    
+    // Loop through each image and add delay
+    images.each(function(index) {
+      var image = $(this);
+      setTimeout(function() {
+        image.addClass('animate');
+      }, 200 * index); 
+    });
+  }
+});

@@ -1,0 +1,26 @@
+$(document).ready(function() {
+
+  var container = $("section.faq-sec");
+
+  var list = container.find("section.faq-sec .faq-wrap .feachFaq");
+  var button = container.find(".see-more-btn");
+
+  var numToShow = 5;
+  var numInList = list.length;
+
+  list.hide();
+
+  list.slice(0, numToShow).show();
+
+  button.click(function(){
+    var showing = list.filter(':visible').length;
+    list.slice(showing, showing + 3).fadeIn();
+    var nowShowing = list.filter(':visible').length;
+
+    if (nowShowing >= numInList) {
+      button.hide();
+    }
+  });
+
+
+});
